@@ -10,3 +10,7 @@
  ⠈about what's new and different about coffee.
 
 ```
+
+```
+remove all the emoji and replace them with custom icons
+```
