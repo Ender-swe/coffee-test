@@ -4,10 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node --env-file-if-exists=../../.env --env-file-if-exists=.env --watch src/server.js",
+    "dev": "node dev.js",
     "build": "node build.js",
     "start": "node --env-file-if-exists=../../.env --env-file-if-exists=.env dist/server.js",
-    "check": "node --check src/app.js && node --check src/server.js && node --check src/auth.js && node --check src/checkout.js && node --check src/db.js && node --check build.js",
+    "check": "node --check src/app.js && node --check src/server.js && node --check src/auth.js && node --check src/checkout.js && node --check src/db.js && node --check build.js && node --check dev.js",
     "test": "node --test test/*.test.js",
     "db:migrate": "node --env-file-if-exists=../../.env --env-file-if-exists=.env migrate.js",
     "test:integration": "node --env-file-if-exists=../../.env --env-file-if-exists=.env --test integration/*.test.js"

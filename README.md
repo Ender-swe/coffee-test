@@ -43,6 +43,8 @@ WEB_URL=http://localhost:3000
 ```
 
 The API also loads a root `.env`, with `apps/api/.env` taking precedence.
+Both files are optional; the dev launcher only passes existing files to Node's
+watch mode. Restart the dev command after creating a new env file.
 Restart the API after changing environment settings. With the Stripe CLI installed:
 
 ```sh
