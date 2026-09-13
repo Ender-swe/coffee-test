@@ -1,0 +1,19 @@
+name: orlast
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: orlast
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-orlast_local_only}
+      POSTGRES_DB: orlast
+    ports:
+      - '127.0.0.1:5433:5432'
+    volumes:
+      - orlast-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U orlast -d orlast']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+volumes:
+  orlast-data:

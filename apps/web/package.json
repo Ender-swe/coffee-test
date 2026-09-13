@@ -1,0 +1,18 @@
+{
+  "name": "@orlast/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "start": "vite preview --host 0.0.0.0",
+    "check": "node --check app.js && node --check commerce.js && node --check cart.js && node --check vite.config.js"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  },
+  "dependencies": {
+    "@orlast/catalog": "*"
+  }
+}

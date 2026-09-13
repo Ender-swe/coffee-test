@@ -1,10 +1,33 @@
 {
-    "name": "orlast",
-    "version": "1.0.0",
-    "private": true,
-    "scripts": {
-        "dev": "node server.js",
-        "start": "node server.js",
-        "build": "node build.js"
-    }
+  "name": "orlast-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "npm@11.6.2",
+  "engines": {
+    "node": ">=24",
+    "npm": ">=11"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:web": "npm run dev --workspace=@orlast/web",
+    "dev:api": "npm run dev --workspace=@orlast/api",
+    "start": "turbo run start",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "check": "turbo run check",
+    "db:up": "docker compose up -d --wait",
+    "db:down": "docker compose stop",
+    "db:migrate": "npm run db:migrate --workspace=@orlast/api",
+    "test:integration": "npm run test:integration --workspace=@orlast/api",
+    "test:e2e": "playwright test",
+    "stripe:verify": "node --env-file-if-exists=.env --env-file-if-exists=apps/api/.env scripts/verify-stripe.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "turbo": "^2.0.0"
+  }
 }
