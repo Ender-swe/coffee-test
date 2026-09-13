@@ -24,10 +24,12 @@
     "db:migrate": "npm run db:migrate --workspace=@orlast/api",
     "test:integration": "npm run test:integration --workspace=@orlast/api",
     "test:e2e": "playwright test",
-    "stripe:verify": "node --env-file-if-exists=.env --env-file-if-exists=apps/api/.env scripts/verify-stripe.mjs"
+    "stripe:verify": "node --env-file-if-exists=.env --env-file-if-exists=apps/api/.env scripts/verify-stripe.mjs",
+    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
+    "prettier": "3.9.6",
     "turbo": "^2.0.0"
   }
 }
